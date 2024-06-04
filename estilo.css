@@ -1,0 +1,28 @@
+body,html{
+   height: 50%;
+   margin: 20;
+   display: block;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(57, 36, 246);
+}
+
+.container{
+    display: block;
+    width: 100%;
+}
+
+#numero{
+    height: 50px;
+    width: 400px;
+    background-color: rgb(20, 254, 246);
+    font-size: 2em;
+}
+
+#visor{
+    text-align: center;
+}
+
+#teclado{
+    text-align: center;
+}
