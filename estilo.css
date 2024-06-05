@@ -27,3 +27,8 @@ body,html{
     text-align: center;
 }
 
+.container button{
+    text-align: center;
+    height: 50px;
+    width: 98px;
+}
