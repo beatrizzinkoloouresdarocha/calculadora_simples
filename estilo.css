@@ -14,7 +14,7 @@ body,html{
 
 #numero{
     height: 50px;
-    width: 400px;
+    width: 310px;
     background-color: rgb(20, 254, 246);
     font-size: 2em;
 }
@@ -27,16 +27,3 @@ body,html{
     text-align: center;
 }
 
-.buttonac {
-    font-size: 20px;
-    padding: 10px 20px;
-    margin: 5px;
-}
-
-.large {
-    padding: 10px 40px;
-}
-
-.divide {
-    font-size: 30px;
-}
