@@ -4,7 +4,7 @@ body,html{
    display: block;
    justify-content: center;
    align-items: center;
-   background-color: rgb(57, 36, 246);
+   background-color: rgb(96, 221, 253);
 }
 
 .container{
@@ -15,7 +15,7 @@ body,html{
 #numero{
     height: 50px;
     width: 400px;
-    background-color: rgb(20, 254, 246);
+    background-color: rgb(23, 104, 243);
     font-size: 2em;
 }
 
@@ -31,4 +31,5 @@ body,html{
     text-align: center;
     height: 50px;
     width: 98px;
+    background-color: aqua;
 }
