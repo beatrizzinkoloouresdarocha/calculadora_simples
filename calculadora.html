@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <title>Calculadora Simples</title>
+    <title>calculadora simples</title>
 </head>
 <body>
     <div class="container" id="visor">
@@ -46,36 +46,7 @@
             <button type="button" class="buttonac" onclick="calculateResult()">=</button>
         </div>
     </div>
-    
-    <script>
-        function addInput(value) {
-            const input = document.getElementById('numero');
-            input.value += value;
-        }
 
-        function clearInput() {
-            document.getElementById('numero').value = '';
-        }
-
-        function backspaceInput() {
-            const input = document.getElementById('numero');
-            input.value = input.value.slice(0, -1);
-        }
-
-        function calculateResult() {
-            const input = document.getElementById('numero');
-            try {
-                input.value = eval(input.value.replace('÷', '/').replace('×', '*'));
-            } catch (e) {
-                alert('Erro na expressão');
-                clearInput();
-            }
-        }
-
-        document.getElementById('form-calculadora').addEventListener('submit', function(event) {
-            event.preventDefault();
-            calculateResult();
-        });
-    </script>
+    <script src="calculadora.js"></script>
 </body>
 </html>
