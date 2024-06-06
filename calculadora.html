@@ -4,49 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <title>calculadora simples</title>
+    <title>Calculadora Simples</title>
 </head>
 <body>
     <div class="container" id="visor">
-        <form>
+        <form id="form-calculadora">
             <label for="numero">Número:</label>
-            <input type="number" id="numero" name="numero">
+            <input type="text" id="numero" name="numero">
             <input type="submit" value="Enviar">
         </form>
     </div>
     <div class="container" id="teclado">
         <div class="container button">
-            <button type="button" class="buttonac">AC</button>
-            <button type="button" class="buttonac">( )</button>
-            <button type="button" class="buttonac">%</button>
-            <button type="button" class="buttonac" id="divideButton">÷</button>
+            <button type="button" class="buttonac" onclick="clearInput()">AC</button>
+            <button type="button" class="buttonac" onclick="addInput('(')">(</button>
+            <button type="button" class="buttonac" onclick="addInput(')')">)</button>
+            <button type="button" class="buttonac" onclick="addInput('/')">÷</button>
         </div>
         <div class="container button">
-            <button type="button" class="buttonac">7</button>
-            <button type="button" class="buttonac">8</button>
-            <button type="button" class="buttonac">9</button>
-            <button type="button" class="buttonac">&#215;</button>
+            <button type="button" class="buttonac" onclick="addInput('7')">7</button>
+            <button type="button" class="buttonac" onclick="addInput('8')">8</button>
+            <button type="button" class="buttonac" onclick="addInput('9')">9</button>
+            <button type="button" class="buttonac" onclick="addInput('*')">&#215;</button>
         </div>
         <div class="container button">
-            <button type="button" class="buttonac">4</button>
-            <button type="button" class="buttonac">5</button>
-            <button type="button" class="buttonac">6</button>
-            <button type="button" class="buttonac">-</button>
+            <button type="button" class="buttonac" onclick="addInput('4')">4</button>
+            <button type="button" class="buttonac" onclick="addInput('5')">5</button>
+            <button type="button" class="buttonac" onclick="addInput('6')">6</button>
+            <button type="button" class="buttonac" onclick="addInput('-')">-</button>
         </div>
         <div class="container button">
-            <button type="button" class="buttonac">1</button>
-            <button type="button" class="buttonac">2</button>
-            <button type="button" class="buttonac">3</button>
-            <button type="button" class="buttonac">+</button>
+            <button type="button" class="buttonac" onclick="addInput('1')">1</button>
+            <button type="button" class="buttonac" onclick="addInput('2')">2</button>
+            <button type="button" class="buttonac" onclick="addInput('3')">3</button>
+            <button type="button" class="buttonac" onclick="addInput('+')">+</button>
         </div>
         <div class="container button">
-            <button type="button" class="buttonac">0</button>
-            <button type="button" class="buttonac">,</button>
-            <button type="button" class="buttonBackspace">&#9003;</button>
-            <button type="button" class="buttonac">=</button>
+            <button type="button" class="buttonac" onclick="addInput('0')">0</button>
+            <button type="button" class="buttonac" onclick="addInput('.')">,</button>
+            <button type="button" class="buttonBackspace" onclick="backspaceInput()">&#9003;</button>
+            <button type="button" class="buttonac" onclick="calculateResult()">=</button>
         </div>
     </div>
-        
+    
+    <script>
+        function addInput(value) {
+            const input = document.getElementById('numero');
+            input.value += value;
+        }
 
+        function clearInput() {
+            document.getElementById('numero').value = '';
+        }
+
+        function backspaceInput() {
+            const input = document.getElementById('numero');
+            input.value = input.value.slice(0, -1);
+        }
+
+        function calculateResult() {
+            const input = document.getElementById('numero');
+            try {
+                input.value = eval(input.value.replace('÷', '/').replace('×', '*'));
+            } catch (e) {
+                alert('Erro na expressão');
+                clearInput();
+            }
+        }
+
+        document.getElementById('form-calculadora').addEventListener('submit', function(event) {
+            event.preventDefault();
+            calculateResult();
+        });
+    </script>
 </body>
 </html>
