@@ -4,28 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <title>calculadora simples</title>
+    <title>Calculadora Simples</title>
 </head>
 <body>
     <div class="container" id="visor">
-        <form id="form-calculadora">
-            <label for="numero">Número:</label>
-            <input type="text" id="numero" name="numero">
-            <input type="submit" value="Enviar">
-        </form>
+        <!-- Mantendo apenas o campo de input sem o label e o botão de submit -->
+        <input type="text" id="numero" name="numero" readonly>
     </div>
     <div class="container" id="teclado">
         <div class="container button">
             <button type="button" class="buttonac" onclick="clearInput()">AC</button>
-            <button type="button" class="buttonac" onclick="clearInput()">( )</button>
-            <button type="button" class="buttonac" onclick="clearInput()">%</button>
+            <button type="button" class="buttonac" onclick="addInput('(')">(</button>
+            <button type="button" class="buttonac" onclick="addInput(')')">)</button>
             <button type="button" class="buttonac" onclick="addInput('/')">÷</button>
         </div>
         <div class="container button">
             <button type="button" class="buttonac" onclick="addInput('7')">7</button>
             <button type="button" class="buttonac" onclick="addInput('8')">8</button>
             <button type="button" class="buttonac" onclick="addInput('9')">9</button>
-            <button type="button" class="buttonac" onclick="addInput('*')">&#215;</button>
+            <button type="button" class="buttonac" onclick="addInput('*')">×</button>
         </div>
         <div class="container button">
             <button type="button" class="buttonac" onclick="addInput('4')">4</button>
@@ -42,7 +39,7 @@
         <div class="container button">
             <button type="button" class="buttonac" onclick="addInput('0')">0</button>
             <button type="button" class="buttonac" onclick="addInput('.')">,</button>
-            <button type="button" class="buttonBackspace" onclick="backspaceInput()">&#9003;</button>
+            <button type="button" class="buttonBackspace" onclick="backspaceInput()">⌫</button>
             <button type="button" class="buttonac" onclick="calculateResult()">=</button>
         </div>
     </div>
